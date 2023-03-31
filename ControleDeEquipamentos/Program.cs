@@ -22,11 +22,24 @@ namespace ControleDeEquipamentos
             int escolha = 0;
             while (count != 0)
             {
-                Console.WriteLine("Estoque de Equipamentos:");
-                Console.WriteLine("---- Menu -----");
-                Console.WriteLine("[1] Cadastro de Equipamentos");
-                Console.WriteLine("[2] Controle de Chamadas");
-                Console.WriteLine("[0] Sair");
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("┌───────────────────────────────┐");
+                Console.WriteLine("│      Estoque de Equipamentos  │");
+                Console.WriteLine("├─────────────────────┬─────────┤");
+                Console.WriteLine("│       Opções        │ Teclas  │");
+                Console.WriteLine("├─────────────────────┼─────────┤");
+                Console.WriteLine("│ 1. Cadastro de      │    1    │");
+                Console.WriteLine("│    Equipamentos     │         │");
+                Console.WriteLine("├─────────────────────┼─────────┤");
+                Console.WriteLine("│ 2. Controle de      │    2    │");
+                Console.WriteLine("│    Chamadas         │         │");
+                Console.WriteLine("├─────────────────────┼─────────┤");
+                Console.WriteLine("│ 0. Sair             │    0    │");
+                Console.WriteLine("└─────────────────────┴─────────┘");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.Write("Escolha uma opção: ");
                 count = Convert.ToInt32(Console.ReadLine());
 
                 if (count == 1)
@@ -38,20 +51,35 @@ namespace ControleDeEquipamentos
 
                     while (escolha != 0)
                     {
-                        Console.WriteLine("Cadastro de Equipamentos:");
-                        Console.WriteLine("---- Menu -----");
-                        Console.WriteLine("[1] Cadastrar Item");
-                        Console.WriteLine("[2] Editar Item");
-                        Console.WriteLine("[3] Lista de Itens Cadastrados");
-                        Console.WriteLine("[4] Remoção de Itens Cadastrados");
-                        Console.WriteLine("[0] Voltar ao Menu Principal");
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.WriteLine("┌───────────────────────────────┐");
+                        Console.WriteLine("│      Cadastro de Equipamentos |");
+                        Console.WriteLine("├─────────────────────┬─────────┤");
+                        Console.WriteLine("│       Opções        │ Teclas  │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 1. Cadastrar Item   │    1    │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 2. Editar Item      │    2    │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 3. Lista de Itens   │    3    │");
+                        Console.WriteLine("│    Cadastrados      │         │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 4. Remover Item     │    4    │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 0. Voltar ao Menu   │    0    │");
+                        Console.WriteLine("│    Principal        │         │");
+                        Console.WriteLine("└─────────────────────┴─────────┘");
+                        Console.ResetColor();
+                        Console.WriteLine();
+                        Console.Write("Escolha uma opção: ");
                         escolha = Convert.ToInt32(Console.ReadLine());
 
 
 
                         if (escolha == 1)
                         {
-                            Console.WriteLine("Quuantos Equipamentos deseja cadastrar?");
+                            Console.WriteLine("Quantos Equipamentos deseja cadastrar?");
                             nrDeEquipamentosCadastrados = Convert.ToInt32(Console.ReadLine());
 
                             while (nomeDoFabricante.Count < nrDeEquipamentosCadastrados)
@@ -122,14 +150,21 @@ namespace ControleDeEquipamentos
                         }
                         if (escolha == 3)
                         {
-                            for (int i = 0; i < nomeDoFabricante.Count; i++)
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.WriteLine("Lista de Equipamentos:");
+                            Console.WriteLine("------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("| Nr de Série |    Nome do Equipamento    | Preço | Fabricante |       Data de Fabricação        |");
+                            Console.WriteLine("------------------------------------------------------------------------------------------------");
+                            for (int i = 0; i < dataDeFabricacao.Count; i++)
                             {
-                                Console.WriteLine("------------------------------------------------------------------------");
-                                Console.WriteLine(" | " + nrDeSerie[i] + " | " + nomeDoEquipamento[i] + " | " + precoDeAquisicao[i] + " | " + dataDeFabricacao[i] + " | " + nomeDoFabricante[i] + " | ");
-                                Console.WriteLine("------------------------------------------------------------------------");
+                                Console.WriteLine("| {0,-11} | {1,-25} | {2,-5} | {3,-10} | {4,-30} |", nrDeSerie[i], nomeDoEquipamento[i], precoDeAquisicao[i], nomeDoFabricante[i], dataDeFabricacao[i]);
                             }
+                            Console.WriteLine("------------------------------------------------------------------------------------------------");
                             Console.ReadKey();
                             Console.Clear();
+                            Console.ResetColor();
+
                         }
                         if (escolha == 4)
                         {
@@ -168,12 +203,26 @@ namespace ControleDeEquipamentos
 
                     while (escolha != 0)
                     {
-                        Console.WriteLine("Cadastro de Equipamentos:");
-                        Console.WriteLine("---- Menu -----");
-                        Console.WriteLine("[1] Registro de Chamados");
-                        Console.WriteLine("[2] Editar Chamado");
-                        Console.WriteLine("[3] Lista de Chamados");
-                        Console.WriteLine("[0] Voltar ao Menu Principal");
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        Console.WriteLine("┌───────────────────────────────┐");
+                        Console.WriteLine("│      Cadastro de Equipamentos │");
+                        Console.WriteLine("├─────────────────────┬─────────┤");
+                        Console.WriteLine("│       Opções        │ Teclas  │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 1. Registro de      │    1    │");
+                        Console.WriteLine("│    Chamados         │         │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 2. Editar Chamado   │    2    │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 3. Lista de Chamados│    3    │");
+                        Console.WriteLine("├─────────────────────┼─────────┤");
+                        Console.WriteLine("│ 0. Voltar ao Menu   │    0    │");
+                        Console.WriteLine("│    Principal        │         │");
+                        Console.WriteLine("└─────────────────────┴─────────┘");
+                        Console.ResetColor();
+                        Console.WriteLine();
+                        Console.Write("Escolha uma opção: ");
                         escolha = Convert.ToInt32(Console.ReadLine());
                         if (escolha == 1)
                         {
@@ -242,14 +291,21 @@ namespace ControleDeEquipamentos
                         }
                         if (escolha == 3)
                         {
-                            for (int i = 0; i < nomeDoFabricante.Count; i++)
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.WriteLine("Lista de Chamados:");
+                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("| Nr Chamado |             Título do Chamado             |                Descrição do Chamado               |   Data de Abertura  |   Equipamento da Chamada   |");
+                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+                            for (int i = 0; i < EquipamentoDaChamada.Count; i++)
                             {
-                                Console.WriteLine("------------------------------------------------------------------------");
-                                Console.WriteLine(" | " + numeroDaChamada[i] + " | " + tituloDoChamado[i] + " | " + descricaoDoChamado[i] + " | " + dataDeAbertura[i] + " | " + EquipamentoDaChamada[i] + " | ");
-                                Console.WriteLine("------------------------------------------------------------------------");
+                                Console.WriteLine("| {0,-10} | {1,-40} | {2,-48} | {3,-20} | {4,-27} |", numeroDaChamada[i], tituloDoChamado[i], descricaoDoChamado[i], dataDeAbertura[i], EquipamentoDaChamada[i]);
                             }
+                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
                             Console.ReadKey();
                             Console.Clear();
+                            Console.ResetColor();
+
                         }
                         if (escolha == 4)
                         {
