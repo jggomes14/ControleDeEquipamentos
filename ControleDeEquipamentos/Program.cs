@@ -84,15 +84,16 @@ namespace ControleDeEquipamentos
 
                             while (nomeDoFabricante.Count < nrDeEquipamentosCadastrados)
                             {
-
                                 Console.WriteLine("Qual o nome do Equipamento?");
-
                                 string equipamento = Console.ReadLine();
 
-                                if (equipamento.Length >= 6)
+                                if (equipamento.Length < 6)
                                 {
-                                    nomeDoEquipamento.Add(equipamento);
+                                    Console.WriteLine("Não é possível cadastrar o Equipamento com menos de 6 letras. Favor preencher novamente.");
+                                    continue;
                                 }
+
+                                nomeDoEquipamento.Add(equipamento);
 
                                 Console.WriteLine("Qual o Preço de Aquisição do Equipamento?");
                                 string preco = Console.ReadLine();
@@ -124,10 +125,15 @@ namespace ControleDeEquipamentos
 
                             string equipamento = Console.ReadLine();
 
-                            if (equipamento.Length >= 6)
+                            if (equipamento.Length < 6)
                             {
-                                nomeDoEquipamento[id - 1] = equipamento;
+                                Console.WriteLine("Não é possível cadastrar o Equipamento com menos de 6 letras. Favor preencher novamente.");
+                                equipamento = Console.ReadLine(); 
                             }
+
+                            nomeDoEquipamento[id - 1] = equipamento;
+                        
+
 
                             Console.WriteLine("Qual o Preço de Aquisição do Equipamento?");
                             string preco = Console.ReadLine();
