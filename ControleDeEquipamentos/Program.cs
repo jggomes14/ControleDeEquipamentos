@@ -23,7 +23,7 @@ namespace ControleDeEquipamentos
             while (count != 0)
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("┌───────────────────────────────┐");
                 Console.WriteLine("│      Estoque de Equipamentos  │");
                 Console.WriteLine("├─────────────────────┬─────────┤");
